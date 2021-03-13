@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài thực hành caculator 2</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        table {
+            width: 50%;
+            height: 500px;
+            margin: 50px auto;
+        }
+        .grey {
+            background-color: grey;
+            color: white;
+        }
+        .white {
+            background-color: ghostwhite;
+            color: black;
+        }
+        .yellow {
+            background-color: orange;
+            color: white;
+        }
+        #screen {
+            background-color: white;
+            text-align: right;
+        }
+        #screen {
+            width: 90%;
+            height: 100%;
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+<table border="">
+    <tr>
+        <th colspan="4">
+            <input type="text" id="screen">
+        </th>
+    </tr>
+    <tr>
+        <th class="white" onclick="reset()" >AC</th>
+        <th class="white">+/-</th>
+        <th class="white" onclick="op('%')">%</th>
+        <th  class="yellow" onclick="op('/')">/</th>
+    </tr>
+    <tr>
+        <th class="grey" onclick="number(7)">7</th>
+        <th class="grey" onclick="number(8)">8</th>
+        <th class="grey" onclick="number(9)">9</th>
+        <th class="yellow" onclick="op('*')">*</th>
+    </tr>
+    <tr>
+        <th class="grey" onclick="number(4)">4</th>
+        <th class="grey" onclick="number(5)">5</th>
+        <th class="grey" onclick="number(6)">6</th>
+        <th class="yellow" onclick="op('-')">-</th>
+    </tr>
+    <tr>
+        <th class="grey" onclick="number(1)">1</th>
+        <th class="grey" onclick="number(2)">2</th>
+        <th class="grey" onclick="number(3)">3</th>
+        <th class="yellow" onclick="op('+')">+</th>
+    </tr>
+    <tr>
+        <th colspan="2" class="grey" onclick="number(0)">0</th>
+        <th class="grey">.</th>
+        <th class="yellow" onclick="resultOp()"> = </th>
+
+    </tr>
+</table>
+<script>
+    function number(evt) {
+           document.getElementById('screen').value = document.getElementById('screen').value + evt;
+    }
+    function op(opr) {
+        document.getElementById('screen').value = document.getElementById('screen').value + opr;
+    }
+    function reset() {
+        document.getElementById('screen').value = null;
+    }
+    function resultOp() {
+        document.getElementById('screen').value = eval( document.getElementById('screen').value);
+    }
+
+
+
+</script>
+
+</body>
+</html>
